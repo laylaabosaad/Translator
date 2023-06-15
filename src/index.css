@@ -17,25 +17,16 @@ form {
   justify-content: center;
 }
 
-input {
-  width: 400px;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  border: none;
-  background-color: white;
-}
-
+input,
 select {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 10px;
   font-size: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
   border: none;
   background-color: white;
-  color: #444;
 }
 
 option {
@@ -46,6 +37,7 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .translate-btn,
@@ -56,12 +48,14 @@ option {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
 }
 
 .translate-btn {
- background-color: #3f51b5;
+  background-color: #3f51b5;
   color: white;
-  margin-right: 10px;
 }
 
 .clear-btn {
@@ -69,14 +63,12 @@ option {
   color: white;
 }
 
-
 .clear-btn:hover {
   background-color: #ac302c;
 }
 
-.translate-btn:hover{
+.translate-btn:hover {
   background-color: #336495;
-  
 }
 
 .translated-text {
@@ -100,16 +92,34 @@ p {
   margin-top: 50px;
 }
 
-/* NOTES */
-/* NOTES */
-/* NOTES */
+@media screen and (max-width: 850px) {
+  input,
+  select {
+    max-width: 100%;
+  }
 
+  .btn-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .translate-btn,
+  .clear-btn {
+    max-width: unset;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+
+/* NOTES */
+/* NOTES */
+/* NOTES */
 .notes-container {
   margin: 20px;
 }
 
 h1 {
-
   font-size: 50px;
   margin-bottom: 20px;
   margin-top: 80px;
@@ -133,7 +143,7 @@ h1 {
   border-radius: 5px;
   font-size: 1.3rem;
   cursor: pointer;
-   transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .notes-button:hover {
@@ -143,7 +153,6 @@ h1 {
 .notes-list {
   display: flex;
   flex-direction: column;
- 
 }
 
 .note-container {
@@ -155,7 +164,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
-  
+
   width: 80%;
   max-width: 600px;
 }
@@ -172,18 +181,50 @@ h1 {
   border-radius: 5px;
   font-size: 1.3rem;
   cursor: pointer;
-   transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .note-delete:hover {
   background-color: #c0392b;
 }
 
-.notes-form{
-  
+.notes-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content:left;
+  justify-content: left;
   align-items: center;
   flex-direction: row;
+}
+
+.notes-container h1 {
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 850px) {
+  .notes-container {
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  .notes-input {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .notes-list {
+    width: 100%;
+  }
+
+  .note-container {
+    width: 100%;
+  }
+
+  .note-text, .note-delete {
+    font-size: 1rem;
+  }
 }
