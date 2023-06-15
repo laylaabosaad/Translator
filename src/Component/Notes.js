@@ -7,7 +7,7 @@ function Notes() {
 
   const getNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:3000");
+      const res = await axios.get("https://translator-i1gp.onrender.com");
       setNotes(res.data.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
@@ -18,7 +18,7 @@ function Notes() {
     e.preventDefault();
     try {
       const body = { text };
-      await axios.post("http://localhost:3000", body);
+      await axios.post("https://translator-i1gp.onrender.com", body);
       setText("");
       getNotes();
     } catch (error) {
@@ -28,7 +28,7 @@ function Notes() {
 
   const handleDeleteNote = async (noteId) => {
     try {
-      await axios.delete(`http://localhost:3000/${noteId}`);
+      await axios.delete(`https://translator-i1gp.onrender.com/${noteId}`);
       getNotes();
     } catch (error) {
       console.error("Error deleting note:", error);
@@ -55,7 +55,6 @@ function Notes() {
           />
         </div>
         <div>
-        
           <button type="submit" className="notes-button">
             Add Note
           </button>
