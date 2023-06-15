@@ -1,5 +1,5 @@
 
-import Translator from './Controllers/Translator';
+import Translator from './Component/Translator';
 import './App.css';
 
 function App() {
